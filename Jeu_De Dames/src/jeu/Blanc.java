@@ -1,11 +1,6 @@
 package jeu;
 
-public class Blanc extends Pion {
-	public static int nombreRestant = 12;
-	
-	/**
-	 *  Compteur des pions restants du joueur Blanc
-	 */
+public class Blanc extends Pion{
 	public Blanc() {
 		super("b");
 	}

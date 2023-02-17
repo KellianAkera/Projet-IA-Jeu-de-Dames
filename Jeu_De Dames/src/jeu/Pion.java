@@ -23,4 +23,12 @@ public abstract class Pion {
 	 */
 	public abstract String getCouleur();
 	
+	/**
+	 * Tranformme le pion en Dame
+	 */
+	public void setToDame(){
+		dame=true;
+		couleur=couleur.toUpperCase();
+	}
+	
 }

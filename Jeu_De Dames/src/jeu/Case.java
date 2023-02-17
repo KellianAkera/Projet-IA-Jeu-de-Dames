@@ -3,7 +3,7 @@ package jeu;
 public class Case {
 	
 	/**
-	 * Pion présent dans la case ou null si pas de pion
+	 * Pion prï¿½sent dans la case ou null si pas de pion
 	 */
 	private Pion p;    // pion contenu dans la case
 	
@@ -42,6 +42,15 @@ public class Case {
 	 */
 	public Pion getPion() { 
 		return p;
+	}
+
+	/**
+	 * Modifie la valeur de la case
+	 * 
+	 * @param pion Nouvelle valeur du pion qui est dans la case
+	 */
+	public void setPion(Pion pion){
+		p=pion;
 	}
 }
 

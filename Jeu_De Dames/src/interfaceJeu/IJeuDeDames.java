@@ -19,7 +19,7 @@ public interface IJeuDeDames {
 	 *  Deplace un pion d'une case dans une autre case
 	 *  
 	 * @param c1 la case initial du pion
-	 * @param c2 la case d'arrivée
+	 * @param c2 la case d'arrivï¿½e
 	 */
 	public void deplacerPion(Case c1, Case c2);
 	
@@ -31,7 +31,7 @@ public interface IJeuDeDames {
 	public void prisePion(Case c);
 	
 	/**
-	 *  Enumère les actions possibles qu'un pion d'une case peut effectuer
+	 *  Enumï¿½re les actions possibles qu'un pion d'une case peut effectuer
 	 *  
 	 * @param c la case en question
 	 */
