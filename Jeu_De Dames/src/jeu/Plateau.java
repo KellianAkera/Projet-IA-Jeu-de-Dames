@@ -16,25 +16,25 @@ public class Plateau {
 		for (int l = 0; l<3; l +=2) {                          // Ligne 1 et 3
 			for (int c = 0; c<8; c++) {                        // Les 8 cases en horizontal
 				
-				if (c%2 != 0 && l == 0) {                      // Sur les emplacements impairs sur la première ligne
-					Rouge r = new Rouge();                     // création du pion rouge
-					plateau[l][c] = new Case(r,false,true);    // Création case avec pion sur le plateau à l'emplacement [i,j] qui transforme blanc en dame
-				}else if(c%2 != 0){                            // Emplacement sur la 3ème ligne
+				if (c%2 != 0 && l == 0) {                      // Sur les emplacements impairs sur la premiï¿½re ligne
+					Rouge r = new Rouge();                     // crï¿½ation du pion rouge
+					plateau[l][c] = new Case(r,false,true,l,c);    // Crï¿½ation case avec pion sur le plateau ï¿½ l'emplacement [i,j] qui transforme blanc en dame
+				}else if(c%2 != 0){                            // Emplacement sur la 3ï¿½me ligne
 					Rouge r = new Rouge();
-					plateau[l][c] = new Case(r,false,false);   // Creation case avec pion sans basique
+					plateau[l][c] = new Case(r,false,false,l,c);   // Creation case avec pion sans basique
 				}else {
-					plateau[l][c] = null;                      // Case vide (jamais utilisé)
+					plateau[l][c] = null;                      // Case vide (jamais utilisï¿½)
 				}	
 			}
 		}
 		
 		// 2EME LIGNE
-		for (int l = 0; l<8; l++) {    // Sur les 8 cases en horizontal
-			if (l%2 == 0) {            // Sur les emplacements pairs
+		for (int c = 0; c<8; c++) {    // Sur les 8 cases en horizontal
+			if (c%2 == 0) {            // Sur les emplacements pairs
 				Rouge r = new Rouge();
-				plateau[1][l] = new Case(r,false,false);  
+				plateau[1][c] = new Case(r,false,false,1,c);  
 			}else {
-				plateau[1][l] = null;
+				plateau[1][c] = null;
 			}
 		}
 		
@@ -42,10 +42,10 @@ public class Plateau {
 		for (int l = 3; l<5; l++) {
 			for (int c = 0; c<8; c++) {
 				
-				if (c%2 == 0 && l == 3) {                       // Emplacements pairs, 4ème ligne
-					plateau[l][c] = new Case(null,false,false);
+				if (c%2 == 0 && l == 3) {                       // Emplacements pairs, 4ï¿½me ligne
+					plateau[l][c] = new Case(null,false,false,l,c);
 				}else if(c%2 != 0 && l == 4) {
-					plateau[l][c] = new Case(null,false,false); // Emplacements pairs, 5èmes lignes
+					plateau[l][c] = new Case(null,false,false,l,c); // Emplacements pairs, 5ï¿½mes lignes
 				}else {
 					plateau[l][c] = null;                       // Case vide
 				}
@@ -58,10 +58,10 @@ public class Plateau {
 				
 				if (c%2 == 0 && l == 7) {                   // Emplacement pair ligne 8
 					Blanc b = new Blanc();
-					plateau[l][c] = new Case(b,true,false); // Case qui transforme les pions rouges en Dame
+					plateau[l][c] = new Case(b,true,false,l,c); // Case qui transforme les pions rouges en Dame
 				}else if(c%2 == 0){                         // Emplacement pair ligne 6
 					Blanc b = new Blanc();
-					plateau[l][c] = new Case(b,false,false); 
+					plateau[l][c] = new Case(b,false,false,l,c); 
 				}else {
 					plateau[l][c] = null;
 				}		
@@ -72,7 +72,7 @@ public class Plateau {
 		for (int c = 0; c<8; c++) {       // Pour les 8 colonnes
 			if (c%2 != 0) {               // Si case impair
 				Blanc b = new Blanc();
-				plateau[6][c] = new Case(b,false,false);  
+				plateau[6][c] = new Case(b,false,false,6,c);  
 			}else {
 				plateau[6][c] = null;
 			}
@@ -94,7 +94,7 @@ public class Plateau {
 		for (int l = 0; l<8; l++) {              // Pour toutes les lignes
 			t.append(l+"   |");
 			for (int c = 0; c<8; c++) {          // Pour toutes les colonnes
-				if (plateau[l][c] == null) {     // Si la case n'est jamai utilisé
+				if (plateau[l][c] == null) {     // Si la case n'est jamai utilisï¿½
 					t.append("||||||");
 				} else {
 					t.append("  "+plateau[l][c].affichePion()+"  |");   // Sinon on met le pion
@@ -104,6 +104,10 @@ public class Plateau {
 		}
 		
 		return t.toString();
+	}
+
+	public Case getCase(int ligne,int colonne) {
+		return plateau[ligne][colonne];
 	}
 }
 

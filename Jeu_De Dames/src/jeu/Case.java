@@ -15,12 +15,16 @@ public class Case {
 	/**
 	 * True si la case transforme un pion blanc en dame, false sinon
 	 */
-	private boolean blancToDame;    
+	private boolean blancToDame;
+	private int ligne;
+	private int colonne;    
 	
-	public Case(Pion p, boolean rToD, boolean bToD) {
+	public Case(Pion p, boolean rToD, boolean bToD,int ligne , int colonne) {
 		this.p = p;
 		blancToDame = rToD;
 		rougeToDame = bToD;
+		this.ligne=ligne;
+		this.colonne= colonne;
 	}
 	
 	/**
@@ -51,6 +55,14 @@ public class Case {
 	 */
 	public void setPion(Pion pion){
 		p=pion;
+	}
+
+	public int getLigne(){
+		return ligne;
+	}
+
+	public int getColonne(){
+		return colonne;
 	}
 }
 

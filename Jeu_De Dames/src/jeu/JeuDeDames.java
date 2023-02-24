@@ -37,10 +37,12 @@ public class JeuDeDames implements IJeuDeDames {
 	public List<Case> actionPossible(Case c) {
 		List<Case> liste = new ArrayList<Case>();
 		String couleur = c.getPion().couleur;
+		Case[][] plateau=plateau.getPlateau;
+		
 		if (couleur.equals("b") || couleur.equals("B")) {
-			
+			if(plateau[][])
 		}else{
-			
+
 		}
 		return liste;
 	}
