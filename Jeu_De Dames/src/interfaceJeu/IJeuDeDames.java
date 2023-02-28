@@ -1,5 +1,7 @@
 package interfaceJeu;
 
+import java.util.List;
+
 import jeu.*;
 
 public interface IJeuDeDames {
@@ -31,11 +33,21 @@ public interface IJeuDeDames {
 	public void prisePion(Case c);
 	
 	/**
-	 *  Enum�re les actions possibles qu'un pion d'une case peut effectuer
+	 *  Enumere les actions possibles qu'un pion blanc peut effectuer si il est sur une case donné
 	 *  
 	 * @param c la case en question
+	 * @return List<Action>
 	 */
-	public void actionPossible(Case c);
+	public List<Action> actionPossibleBlanc(Case c);
+	
+
+	/**
+	 *  Enumere les actions possibles qu'un pion rouge peut effectuer si il est sur une case donné
+	 *  
+	 * @param c la case en question
+	 * @return List<Action>
+	 */
+	public List<Action> actionPossibleRouge(Case c);
 	
 	/**
 	 *  Transforme un pion en dame

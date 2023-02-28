@@ -64,5 +64,28 @@ public class Case {
 	public int getColonne(){
 		return colonne;
 	}
+
+	public boolean isRouge(){
+		if(p.couleur.equalsIgnoreCase("R")){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	public boolean isBlanc(){
+		if(p.couleur.equalsIgnoreCase("B")){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	public boolean isVide(){
+		if(p == null){
+			return true;
+		}
+		return false;
+	}
 }
 

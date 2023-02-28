@@ -30,5 +30,13 @@ public abstract class Pion {
 		dame=true;
 		couleur=couleur.toUpperCase();
 	}
+
+	/**
+	 * Fonction pour savoir si le pion est une dame
+	 * @return true si le pion est une dame sinon false
+	 */
+	public boolean isDame(){
+		return dame;
+	}
 	
 }

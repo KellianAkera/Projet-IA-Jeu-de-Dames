@@ -109,6 +109,11 @@ public class Plateau {
 	public Case getCase(int ligne,int colonne) {
 		return plateau[ligne][colonne];
 	}
+
+	public static void main(String[] args) {
+		
+		System.out.println(new Plateau().afficheEtat());
+	}
 }
 
 
